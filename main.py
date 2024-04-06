@@ -32,7 +32,7 @@ async def update_feed_duration(feed_duration_seconds: int):
         raise HTTPException(status_code=404, detail="Item not found")
 
     fishDetail["data"].feed_duration_seconds = feed_duration_seconds
-    return {"detail": "success", "data": {"feed_duration_seconds": feed_duration_seconds}}
+    return {"detail": "success", "feed_duration_seconds": feed_duration_seconds}
 
 @app.post("/predict", response_model=OutputData)
 async def predict(input_data: InputData):
